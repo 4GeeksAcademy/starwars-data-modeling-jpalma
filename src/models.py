@@ -12,7 +12,7 @@ class User(db.Model):
     firstname: Mapped[str] = mapped_column(nullable=False)
     lastname: Mapped[str] = mapped_column(nullable=False)
     favorites: Mapped[list["Favorite"]] = relationship(back_populates="user")
-
+    
     def serialize(self):
         return {
             "id": self.id,
